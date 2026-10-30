@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="คู่มือภาษาไทย DOAE Drive & Share สำหรับผู้ใช้และระบบ AI ครอบคลุมการจัดการไฟล์ การแชร์ กิจกรรม ถังขยะ และดาวน์โหลดแอป">
+<meta name="document-language" content="th">
+<meta name="document-format" content="semantic-html">
+<meta name="date-captured" content="2026-10-30">
+<title>คู่มือ DOAE Drive &amp; Share | คู่มือผู้ใช้</title>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "คู่มือ DOAE Drive & Share",
+  "description": "คู่มือภาษาไทยสำหรับ DOAE Drive & Share ครอบคลุมไฟล์ โฟลเดอร์ การอัปโหลด การแชร์ กิจกรรม ถังขยะ และการดาวน์โหลดแอป",
+  "inLanguage": "th",
+  "dateCreated": "2026-10-30",
+  "dateModified": "2026-10-30",
+  "about": {
+    "@type": "WebSite",
+    "url": "https://drive.doae.go.th/",
+    "name": "DOAE Drive & Share"
+  },
+  "keywords": [
+    "DOAE Drive",
+    "Nextcloud",
+    "คู่มือ",
+    "อัปโหลดไฟล์",
+    "แชร์ไฟล์",
+    "Activity",
+    "Deleted files"
+  ]
+}</script>
+<style>
+:root{color-scheme:light;--ink:#1f2937;--muted:#536276;--brand:#244e88;--line:#d8e0eb;--soft:#f3f6fb;--link:#1558a6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{margin:0;background:#eef2f7;color:var(--ink);font:16px/1.7 "Leelawadee UI","Noto Sans Thai",Tahoma,Arial,sans-serif}
+a{color:var(--link);text-decoration-thickness:.08em;text-underline-offset:.16em}
+a:hover{text-decoration-thickness:.14em}
+a:focus-visible,summary:focus-visible{outline:3px solid #f2a900;outline-offset:3px;border-radius:3px}
+.skip-link{position:absolute;left:-9999px;top:0;background:white;padding:.6rem 1rem;z-index:10}
+.skip-link:focus{left:1rem;top:1rem}
+.site-header{background:#173b68;color:#fff;padding:2.4rem max(1.2rem,calc((100vw - 1200px)/2))}
+.site-header h1{font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin:.25rem 0 .4rem}
+.site-header .subtitle{font-size:1.15rem;color:#e5edf8;margin:.25rem 0 1rem}
+.site-header .lead{max-width:70ch;color:#f0f4fa}
+.meta{display:flex;gap:.8rem 1.4rem;flex-wrap:wrap;color:#e2eaf5;font-size:.95rem}
+.layout{max-width:1440px;margin:1.4rem auto;padding:0 1.2rem;display:grid;grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:1.4rem;align-items:start}
+.toc,article{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 18px #1f365410}
+.toc{position:sticky;top:1rem;max-height:calc(100vh - 2rem);overflow:auto;padding:1rem 1.1rem}
+.toc h2{font-size:1.1rem;margin:.2rem 0 .5rem}
+.toc ul{padding-left:1.2rem;margin:.25rem 0}
+.toc li{margin:.18rem 0}
+.toc a{text-decoration:none}
+article{padding:clamp(1.1rem,3vw,2.6rem);min-width:0}
+article h2{margin:2.2rem 0 .7rem;padding-bottom:.3rem;border-bottom:1px solid var(--line);color:var(--brand);font-size:1.55rem;line-height:1.35}
+article h3{margin:1.6rem 0 .35rem;color:#314b6c;font-size:1.2rem}
+article p{margin:.55rem 0}
+article ul,article ol{padding-left:1.6rem;margin:.5rem 0 1rem}
+article li{padding-left:.12rem;margin:.2rem 0}
+.scope{border-left:4px solid #517daf;background:var(--soft);padding:.9rem 1.1rem;margin:1rem 0 1.4rem}
+.scope p:first-child{margin-top:0}.scope p:last-child{margin-bottom:0}
+figure{margin:1.3rem 0 1.6rem}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#f6f8fb}
+figcaption{font-size:.92rem;color:var(--muted);margin-top:.45rem}
+kbd,code{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-size:.94em}
+.docx-link{display:inline-block;margin-top:.8rem;padding:.45rem .85rem;border:1px solid #c8d5e5;border-radius:8px;background:#fff}
+.footer{border-top:1px solid var(--line);margin-top:2rem;padding-top:1rem;color:var(--muted);font-size:.9rem}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.toc{position:static;max-height:none}.site-header{padding:1.7rem 1.2rem}}
+@media print{body{background:white;font-size:11pt}.site-header{background:white;color:var(--ink);padding:0 0 1rem;border-bottom:2px solid #244e88}.site-header .subtitle,.site-header .lead,.meta{color:var(--muted)}.layout{display:block;max-width:none;margin:0;padding:0}.toc{position:static;max-height:none;box-shadow:none;break-after:page}.toc ul ul{display:none}article{border:0;box-shadow:none;padding:0}article h2{break-after:avoid}figure{break-inside:avoid}figure img{max-height:8.6in;object-fit:contain}.docx-link{display:none}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหาหลัก</a>
+<header class="site-header">
+  <p class="eyebrow">DOAE Drive &amp; Share · คู่มือผู้ใช้</p>
+  <h1>คู่มือ DOAE Drive &amp; Share</h1>
+  <p class="subtitle">คู่มือเริ่มต้นใช้งานไฟล์ โฟลเดอร์ และการแชร์</p>
+  <p class="lead">คู่มือนี้อธิบายวิธีหาไฟล์ อัปโหลด จัดระเบียบ และแชร์เอกสาร</p>
+  <div class="meta"><span>สำรวจหน้าเว็บ: <time datetime="2026-10-30">30 ตุลาคม 2569</time></span><span>เว็บไซต์: <a href="https://drive.doae.go.th/" style="color:#fff">drive.doae.go.th</a></span><span>ภาษา: ไทย</span></div>
+  <a class="docx-link" href="DOAE-Drive-Share-Manual.docx">ดาวน์โหลดคู่มือฉบับ Word</a>
+</header>
+<div class="layout">
+<nav class="toc" aria-label="สารบัญคู่มือ">
+<h2>สารบัญ</h2>
+<ul><li><a href="#topic-02">1 หน้าแรกและเมนู</a></li><li><a href="#topic-03">2 เปิดดูไฟล์</a></li><li><a href="#topic-04">3 เพิ่มไฟล์หรือสร้างรายการ</a></li><li><a href="#topic-05">4 เปลี่ยนชื่อ ย้าย และดาวน์โหลด</a><ul><li><a href="#topic-06">แนวทางใช้เมนู Actions</a></li></ul></li><li><a href="#topic-07">5 แชร์ไฟล์</a></li><li><a href="#topic-08">6 หาไฟล์ล่าสุดและไฟล์ที่แชร์</a><ul><li><a href="#topic-09">ล่าสุด</a></li><li><a href="#topic-10">รายการโปรด</a></li><li><a href="#topic-11">แชร์กับฉัน</a></li><li><a href="#topic-12">Personal Files</a></li></ul></li><li><a href="#topic-13">7 ดูประวัติและถังขยะ</a><ul><li><a href="#topic-14">กิจกรรม</a></li><li><a href="#topic-15">ถังขยะ</a></li></ul></li><li><a href="#topic-16">ก่อนแชร์หรือย้ายไฟล์</a></li><li><a href="#topic-17">8 ดาวน์โหลดแอป</a></li></ul>
+</nav>
+<main id="main-content">
+<article itemscope itemtype="https://schema.org/TechArticle" lang="th" data-document-id="doae-drive-share-manual" data-document-version="1.0">
+<meta itemprop="inLanguage" content="th">
+<meta itemprop="dateModified" content="2026-10-30">
+<meta itemprop="about" content="DOAE Drive & Share">
+
+<section class="manual-section level-2" aria-labelledby="topic-01" data-section-id="topic-01">
+<h2 id="topic-01">ขอบเขตและข้อสังเกต</h2>
+<div class="scope" role="note" aria-label="ขอบเขตการสำรวจ">
+<p>ข้อมูลขณะสำรวจ: พื้นที่ 20 GB ใช้ไป 0 B มีโฟลเดอร์ 2 รายการ และยังไม่มีรายการใน ล่าสุด รายการโปรด หรือ แชร์กับฉัน</p>
+<p>ภาพหน้าจอได้ปิดบังชื่อบัญชี อีเมล และชื่อโฟลเดอร์ส่วนบุคคลแล้ว เพื่อความปลอดภัยด้านข้อมูลส่วนบุคคล (PDPA)</p>
+<p>การสำรวจครั้งนี้ไม่ได้เปลี่ยนแปลงไฟล์หรือการแชร์</p>
+</div>
+<p>คู่มือนี้อ้างอิงหน้าจอที่พบขณะสำรวจ บางหน้าไม่มีรายการ จึงอธิบายจากชื่อเมนูที่เห็น</p>
+
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-02" data-section-id="topic-02">
+<h1 id="topic-02">1 หน้าแรกและเมนู</h1>
+<p>หน้าแรกแสดงไฟล์ล่าสุด โฟลเดอร์ และเมนูหลัก</p>
+<figure><img src="screenshots/original/01-home.png" alt="หน้าแรก DOAE Drive &amp; Share แสดงแถบเมนู หมวดไฟล์ รายการล่าสุด โฟลเดอร์ และพื้นที่บัญชี" loading="lazy" decoding="async"><figcaption>หน้าแรก</figcaption></figure>
+<ul>
+<li>1 อัปโหลด / สร้างใหม่: เริ่มเพิ่มไฟล์หรือสร้างรายการใหม่</li>
+<li>2 ไฟล์ของฉัน: เปิดพื้นที่จัดเก็บไฟล์ทั้งหมด</li>
+<li>3 ล่าสุด: ดูรายการที่เพิ่งแก้ไข</li>
+<li>4 แชร์กับฉัน: เปิดรายการที่ผู้อื่นแชร์มาให้</li>
+<li>5 หมวดไฟล์: สรุปรูปภาพ เอกสาร ไฟล์บีบอัด และวิดีโอ/เสียง</li>
+<li>6 ไฟล์ล่าสุด: ทางลัดไปยังรายการที่เพิ่งใช้งาน</li>
+<li>7 โฟลเดอร์: เปิดโฟลเดอร์จากหน้าแรก</li>
+</ul>
+<p>แถบด้านบนของแอป Files ยังมีทางไปหน้าหลัก, Files, Activity และดาวน์โหลด รวมถึงปุ่มค้นหา การแจ้งเตือน รายชื่อผู้ติดต่อ และเมนูบัญชีผู้ใช้</p>
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-03" data-section-id="topic-03">
+<h1 id="topic-03">2 เปิดดูไฟล์</h1>
+<p>เลือก “ไฟล์ของฉัน” แล้วเปิด All files เพื่อดูไฟล์ทั้งหมด คลิกชื่อโฟลเดอร์เพื่อเปิดดูไฟล์ข้างใน</p>
+<figure><img src="screenshots/original/02-files-all.png" alt="หน้ารายการไฟล์ All files แสดงเมนูด้านข้าง ตัวกรอง ตารางไฟล์ และปุ่มสร้างรายการ" loading="lazy" decoding="async"><figcaption>พื้นที่ All files ซึ่งมีปุ่มสร้างรายการ ตัวกรอง และมุมมองไฟล์</figcaption></figure>
+<ul>
+<li>1 ใหม่: เปิดเมนูอัปโหลดและสร้างรายการ</li>
+<li>2 ตัวกรอง: กรองตาม Type, Modified หรือ People</li>
+<li>3–4 โฟลเดอร์: เปิดรายการด้วยการคลิกชื่อหรือไอคอน</li>
+<li>5 ปุ่มสลับมุมมอง: เปลี่ยนระหว่างมุมมองไอคอนกับรายการ</li>
+</ul>
+<p>ในมุมมองรายการ ดูชื่อไฟล์ ขนาด และวันที่แก้ไขได้ คลิกหัวคอลัมน์เพื่อเรียงรายการ ใช้ช่องค้นหาเพื่อหาไฟล์</p>
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-04" data-section-id="topic-04">
+<h1 id="topic-04">3 เพิ่มไฟล์หรือสร้างรายการ</h1>
+<p>เปิดโฟลเดอร์ที่ต้องการเก็บไฟล์ กด “ใหม่” แล้วเลือกว่าจะอัปโหลดหรือสร้างรายการ</p>
+<figure><img src="screenshots/original/03-new-menu.png" alt="เมนู ใหม่ แสดงคำสั่งอัปโหลดและสร้างไฟล์หรือโฟลเดอร์" loading="lazy" decoding="async"><figcaption>เมนูใหม่: อัปโหลดจากเครื่องหรือสร้างไฟล์/โฟลเดอร์</figcaption></figure><figure><img src="screenshots/original/14-new-menu-bottom.png" alt="เมนูสร้างรายการเมื่อเลื่อนลงสุด แสดงคำสั่งเพิ่มเติม" loading="lazy" decoding="async"><figcaption>เมนู “ใหม่” หลังเลื่อนลงสุด ดูคำสั่งเพิ่มเติม</figcaption></figure>
+<ul>
+<li>1 ปุ่ม “ใหม่” เปิดเมนูคำสั่ง</li>
+<li>2 อัปโหลดไฟล์จากเครื่อง</li>
+<li>3 อัปโหลดโฟลเดอร์จากเครื่อง</li>
+<li>4 โฟลเดอร์ใหม่</li>
+<li>5 สร้างไดอะแกรม เอกสาร งานนำเสนอ ตารางคำนวณ หรือไฟล์ข้อความ</li>
+</ul>
+<ol>
+<li>เปิด Files และเข้าโฟลเดอร์ปลายทาง</li>
+<li>กด “ใหม่” แล้วเลือก “อัปโหลดไฟล์” หรือ “อัปโหลดโฟลเดอร์”</li>
+<li>เลือกไฟล์/โฟลเดอร์จากหน้าต่างเลือกไฟล์ของเครื่อง</li>
+<li>รอให้แถบสถานะการอัปโหลดเสร็จ แล้วตรวจชื่อและตำแหน่งในรายการ</li>
+</ol>
+<p>กด Choose File เพื่อเลือกไฟล์จากเครื่อง หากสร้างเอกสารใหม่ ให้เลือกชนิดและตั้งชื่อ</p>
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-05" data-section-id="topic-05">
+<h1 id="topic-05">4 เปลี่ยนชื่อ ย้าย และดาวน์โหลด</h1>
+<p>ที่แถวไฟล์หรือโฟลเดอร์ กดปุ่ม Actions (จุดสามจุด) เพื่อเปิดคำสั่งของรายการนั้น เมนูที่ตรวจพบมี Add to favorites, Open details, Show sharing options, Rename, Move or copy, Edit locally, Download และ Delete folder</p>
+<figure><img src="screenshots/original/10-actions-menu.png" alt="เมนู Actions ของโฟลเดอร์ แสดงคำสั่งรายการโปรด รายละเอียด แชร์ เปลี่ยนชื่อ ย้ายหรือคัดลอก และแก้ไขในเครื่อง" loading="lazy" decoding="async"><figcaption>ภาพหน้าจอต้นฉบับของเมนู Actions ที่เปิดจากรายการโฟลเดอร์</figcaption></figure>
+<section class="manual-section level-2" aria-labelledby="topic-06" data-section-id="topic-06">
+<h2 id="topic-06">แนวทางใช้เมนู Actions</h2>
+<ul>
+<li>Add to favorites: ปักหมุดรายการไว้ในหน้า Favorites</li>
+<li>Open details: ดูรายละเอียดรายการ</li>
+<li>Show sharing options: เปิดแผงจัดการการแชร์</li>
+<li>Rename: เปลี่ยนชื่อรายการ</li>
+<li>Move or copy: ย้ายหรือทำสำเนาไปยังตำแหน่งอื่น</li>
+<li>Edit locally: เปิดแก้ไขผ่านแอปที่เชื่อมต่อบนเครื่อง หากมีการตั้งค่า</li>
+<li>Download: ดาวน์โหลดไฟล์หรือโฟลเดอร์</li>
+<li>Delete folder: ลบโฟลเดอร์ ซึ่งอาจทำให้รายการเข้าไปอยู่ในถังขยะ</li>
+</ul>
+<p>ก่อนย้ายหรือคัดลอก ให้ตรวจโฟลเดอร์ปลายทางและชื่อรายการอีกครั้ง ก่อนลบให้ตรวจว่ารายการนั้นไม่ถูกใช้งานร่วมกับผู้อื่น</p>
+</section>
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-07" data-section-id="topic-07">
+<h1 id="topic-07">5 แชร์ไฟล์</h1>
+<p>กดจุดสามจุดข้างไฟล์ เลือก Show sharing options เพื่อเพิ่มผู้รับ สร้างลิงก์ หรือดูว่าใครเข้าถึงไฟล์ได้</p>
+<figure><img src="screenshots/original/11-share-panel.png" alt="แผง Sharing ของโฟลเดอร์ แสดงช่องค้นหาผู้รับ Share link ผู้ที่เข้าถึง และ internal link" loading="lazy" decoding="async"><figcaption>แผง Sharing ของโฟลเดอร์; ยังไม่มีการสร้างลิงก์หรือเพิ่มผู้รับ</figcaption></figure>
+<ul>
+<li>1 Search for share recipients: ค้นหาผู้รับตามบัญชีที่ระบบอนุญาต</li>
+<li>2 Share link: เริ่มสร้างลิงก์แชร์เมื่อจำเป็น</li>
+<li>3 Others with access: ตรวจรายชื่อผู้ที่เข้าถึงรายการได้</li>
+<li>4 Internal link: ลิงก์ภายในที่ใช้ได้เฉพาะผู้มีสิทธิ์กับโฟลเดอร์</li>
+</ul>
+<ol>
+<li>เลือก Share options ข้างไฟล์ที่ต้องการแชร์</li>
+<li>เลือกคนที่จะรับไฟล์ หรือสร้างลิงก์</li>
+<li>กำหนดว่าจะให้ผู้รับดูหรือแก้ไขได้ และตั้งวันหมดอายุหรือรหัสผ่าน หากมีตัวเลือก</li>
+<li>กดยืนยัน แล้วตรวจรายชื่อผู้ที่เข้าถึงไฟล์ได้</li>
+</ol>
+<p>ก่อนส่งลิงก์ ตรวจชื่อผู้รับและสิทธิ์ให้ถูกต้อง อย่าใช้ลิงก์สาธารณะกับข้อมูลสำคัญ</p>
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-08" data-section-id="topic-08">
+<h1 id="topic-08">6 หาไฟล์ล่าสุดและไฟล์ที่แชร์</h1>
+<section class="manual-section level-2" aria-labelledby="topic-09" data-section-id="topic-09">
+<h2 id="topic-09">ล่าสุด</h2>
+<figure><img src="screenshots/original/05-recent.png" alt="หน้า Recent แสดงสถานะไม่มีไฟล์ที่แก้ไขล่าสุด" loading="lazy" decoding="async"><figcaption>หน้า Recent ซึ่งว่างในบัญชีขณะสำรวจ</figcaption></figure>
+<p>ดูล่าสุด: เปิดเมนู “ล่าสุด” เพื่อหาไฟล์ที่เพิ่งแก้ไข</p>
+</section>
+<section class="manual-section level-2" aria-labelledby="topic-10" data-section-id="topic-10">
+<h2 id="topic-10">รายการโปรด</h2>
+<figure><img src="screenshots/original/06-favorites.png" alt="หน้า Favorites แสดงสถานะยังไม่มีรายการโปรด" loading="lazy" decoding="async"><figcaption>หน้า Favorites ซึ่งยังไม่มีรายการในบัญชีขณะสำรวจ</figcaption></figure>
+<p>เพิ่มไฟล์ไว้ใน “รายการโปรด” จากเมนู Actions แล้วกลับมาหาได้ที่หน้านี้</p>
+</section>
+<section class="manual-section level-2" aria-labelledby="topic-11" data-section-id="topic-11">
+<h2 id="topic-11">แชร์กับฉัน</h2>
+<figure><img src="screenshots/original/07-shared-with-you.png" alt="หน้า Shared with you แสดงสถานะยังไม่มีรายการที่แชร์เข้ามา" loading="lazy" decoding="async"><figcaption>หน้า Shared with you ซึ่งยังไม่มีรายการแชร์เข้ามาขณะสำรวจ</figcaption></figure>
+<p>หาไฟล์ที่ผู้อื่นแชร์ให้ที่หน้านี้ หากไม่พบ ให้ตรวจบัญชีที่ใช้ลงชื่อเข้าใช้</p>
+</section>
+<section class="manual-section level-2" aria-labelledby="topic-12" data-section-id="topic-12">
+<h2 id="topic-12">Personal Files</h2>
+<figure><img src="screenshots/original/04-personal-files.png" alt="มุมมอง Personal Files แสดงรายการโฟลเดอร์ส่วนบุคคล" loading="lazy" decoding="async"><figcaption>มุมมอง Personal Files แสดงโฟลเดอร์ในพื้นที่ส่วนบุคคล</figcaption></figure>
+<p>Personal Files แสดงไฟล์ส่วนบุคคล ส่วน All files แสดงไฟล์ทั้งหมด</p>
+</section>
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-13" data-section-id="topic-13">
+<h1 id="topic-13">7 ดูประวัติและถังขยะ</h1>
+<section class="manual-section level-2" aria-labelledby="topic-14" data-section-id="topic-14">
+<h2 id="topic-14">กิจกรรม</h2>
+<figure><img src="screenshots/original/08-activity.png" alt="หน้า All activities แสดงเหตุการณ์เรียงตามวันที่" loading="lazy" decoding="async"><figcaption>หน้ากิจกรรม เรียงตามวันที่</figcaption></figure>
+<p>ดูประวัติการสร้างหรือแก้ไขไฟล์ได้ที่ “กิจกรรม”</p>
+</section>
+<section class="manual-section level-2" aria-labelledby="topic-15" data-section-id="topic-15">
+<h2 id="topic-15">ถังขยะ</h2>
+<figure><img src="screenshots/original/09-trash.png" alt="หน้า Deleted files แสดงรายการที่ถูกลบพร้อมตำแหน่งเดิมและวันที่ลบ" loading="lazy" decoding="async"><figcaption>หน้าถังขยะ</figcaption></figure>
+<p>เปิด “ถังขยะ” เพื่อดูไฟล์ที่ลบ หากต้องการนำกลับ ให้เลือกรายการแล้วกดกู้คืน ตรวจชื่อไฟล์ก่อนลบถาวร เพราะอาจนำกลับไม่ได้</p>
+</section>
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-16" data-section-id="topic-16">
+<h1 id="topic-16">ก่อนแชร์หรือย้ายไฟล์</h1>
+<ul>
+<li>ตรวจชื่อไฟล์และโฟลเดอร์ปลายทาง</li>
+<li>ตรวจว่ากำลังใช้บัญชี DOAE ที่ถูกต้อง</li>
+<li>ก่อนแชร์ ตรวจผู้รับและระดับสิทธิ์</li>
+<li>สำหรับลิงก์ ให้ใช้เท่าที่จำเป็นและกำหนดข้อจำกัดตามตัวเลือกที่มี</li>
+<li>หลังทำรายการ ตรวจตำแหน่งใหม่ รายชื่อผู้เข้าถึง หรือถังขยะตามชนิดงาน</li>
+</ul>
+<p>คู่มือนี้จัดทำจากหน้าจอที่สำรวจ ณ วันที่ระบุ เมนูหรือสิทธิ์การใช้งานอาจเปลี่ยนตามการอัปเดตระบบและสิทธิ์ของบัญชี</p>
+</section>
+<section class="manual-section level-1" aria-labelledby="topic-17" data-section-id="topic-17">
+<h1 id="topic-17">8 ดาวน์โหลดแอป</h1>
+<p>เมนู “ดาวน์โหลด” มีแอปสำหรับคอมพิวเตอร์ Windows และมือถือ Android กับ iPhone/iPad</p>
+<figure><img src="screenshots/original/12-downloads-full.png" alt="หน้าดาวน์โหลดแอป แสดงโปรแกรม Windows และแอป Android กับ iPhone/iPad ครบทั้งหน้า" loading="lazy" decoding="async"><figcaption>หน้าดาวน์โหลดแอป ตั้งแต่ Windows ถึง Android และ iPhone/iPad</figcaption></figure>
+<p>ในหน้าดาวน์โหลด เลือกปุ่มของแพลตฟอร์มที่ตรงกับอุปกรณ์เพื่อไปยังหน้าดาวน์โหลดหรือร้านแอปที่ระบบระบุ คู่มือนี้ไม่ได้เริ่มดาวน์โหลดหรือติดตั้งแอป</p>
+</section>
+</article>
+</main>
+</div>
+<footer class="footer" style="max-width:1440px;margin:0 auto 2rem;padding-left:1.2rem;padding-right:1.2rem">
+<p>สำรวจและบันทึกภาพเมื่อวันที่ <time datetime="2026-10-30">30 ตุลาคม 2569</time>. เมนูและสิทธิ์อาจเปลี่ยนตามการปรับปรุงระบบและสิทธิ์ของบัญชี</p>
+</footer>
+</body>
+</html>
