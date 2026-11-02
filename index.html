@@ -497,6 +497,39 @@
       align-items: start;
     }
 
+    .network-auth-examples {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .network-auth-example {
+      min-width: 0;
+      padding: 8px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background: #ffffff;
+    }
+
+    .network-auth-example-title {
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .network-auth-example img {
+      width: 100%;
+      height: auto;
+      max-height: 240px;
+      margin-top: 6px;
+      object-fit: contain;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+    }
+
     .key-points-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -505,12 +538,10 @@
     }
 
     @media (max-width: 1024px) {
-      .stage-grid-tight {
-        grid-template-columns: 1fr;
-      }
-
-      .key-points-grid {
-        grid-template-columns: 1fr;
+      .stage-grid-tight,
+      .key-points-grid,
+      .network-auth-examples {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -519,6 +550,7 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
+      min-width: 0;
     }
 
     .screenshot-viewport {
@@ -528,6 +560,8 @@
       overflow: hidden;
       position: relative;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      min-width: 0;
+      max-width: 100%;
     }
 
     .screenshot-viewport.is-mobile-shot {
@@ -602,6 +636,7 @@
 
     .screenshot-img-element {
       width: 100%;
+      max-width: 100%;
       height: auto;
       display: block;
       user-select: none;
@@ -665,6 +700,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      min-width: 0;
     }
 
     .step-linked-item {
@@ -675,6 +711,7 @@
       padding: 9px 12px;
       transition: all 0.15s ease;
       position: relative;
+      min-width: 0;
     }
 
     .step-linked-item:hover,
@@ -715,6 +752,8 @@
       font-weight: 700;
       font-size: 13.5px;
       color: #1e293b;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .step-item-action {
@@ -725,12 +764,14 @@
       background: #f1f5f9;
       color: #475569;
       border: 1px solid #cbd5e1;
+      overflow-wrap: anywhere;
     }
 
     .step-item-desc {
       font-size: 13px;
       color: #334155;
       line-height: 1.5;
+      overflow-wrap: anywhere;
     }
 
     .step-item-desc strong {
@@ -804,6 +845,11 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 10px;
+    }
+
+    .topic-extra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     /* ==================================================== */
@@ -982,6 +1028,130 @@
     }
 
     @media (max-width: 640px) {
+      .main-manual-container {
+        padding: 0 10px;
+      }
+
+      .topic-section {
+        padding: 14px 12px 18px;
+        margin-bottom: 12px;
+        border-radius: 14px;
+      }
+
+      body.continuous-mode-active .topic-section {
+        margin-bottom: 16px;
+        padding-bottom: 18px;
+      }
+
+      .topic-strip-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding-bottom: 10px;
+        margin-bottom: 12px;
+      }
+
+      .topic-strip-header > div {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .topic-title-h2 {
+        font-size: clamp(16px, 4.4vw, 18px);
+        line-height: 1.45;
+        gap: 6px;
+      }
+
+      .topic-desc-inline {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .topic-top-shortcut {
+        padding: 5px 8px;
+        font-size: 11.5px;
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .stage-grid-tight,
+      .key-points-grid {
+        gap: 10px;
+      }
+
+      .topic-extra-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .guidance-steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .screenshots-stack {
+        gap: 10px;
+      }
+
+      .screenshot-viewport {
+        width: 100%;
+      }
+
+      .screenshot-viewport.is-mobile-shot {
+        max-width: 100%;
+      }
+
+      .screenshot-top-meta {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 7px 8px;
+      }
+
+      .browser-dots {
+        flex-shrink: 0;
+      }
+
+      .browser-url-text {
+        min-width: 0;
+      }
+
+      .pin-hint-text {
+        flex: 1 0 100%;
+        margin-left: 0;
+        font-size: 11px;
+      }
+
+      .pin-hint-text::after {
+        content: " · ซูมภาพด้วยสองนิ้ว";
+      }
+
+      .screenshot-canvas {
+        touch-action: pan-x pan-y pinch-zoom;
+      }
+
+      .img-pin {
+        width: 27px;
+        height: 27px;
+        font-size: 12px;
+      }
+
+      .img-pin:hover,
+      .img-pin.active {
+        transform: translate(-50%, -50%) scale(1.3);
+      }
+
+      .img-pin.active {
+        animation: none;
+      }
+
+      .step-linked-item {
+        padding: 10px 11px;
+      }
+
+      .step-item-title {
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
       .topbar-slim {
         gap: 4px;
         padding: 0 8px;
@@ -1057,27 +1227,30 @@
         left: 8px;
         right: 8px;
         bottom: calc(8px + env(safe-area-inset-bottom));
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 4px;
-        padding: 6px 8px;
-        border-radius: 14px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        padding: 7px;
+        border-radius: 16px;
       }
 
       .dock-pos {
-        order: -1;
-        flex: 1 0 100%;
+        grid-column: 1 / -1;
         max-width: 100%;
         overflow: hidden;
-        text-align: center;
+        text-align: left;
         text-overflow: ellipsis;
+        font-size: 11px;
+        line-height: 1.3;
       }
 
       .dock-btn {
-        flex: 1 1 0;
         min-width: 0;
-        padding: 5px 8px;
-        font-size: 11.5px;
+        min-height: 36px;
+        padding: 7px 4px;
+        font-size: 11px;
+        line-height: 1.2;
+        white-space: normal;
       }
 
       .status-toast {
@@ -1090,7 +1263,27 @@
       }
 
       body {
-        padding-bottom: 104px;
+        padding-bottom: calc(132px + env(safe-area-inset-bottom));
+      }
+    }
+
+    @media (max-width: 360px) {
+      .nav-dock {
+        left: 6px;
+        right: 6px;
+        gap: 4px;
+        padding: 6px;
+      }
+
+      .dock-btn {
+        padding-right: 2px;
+        padding-left: 2px;
+        font-size: 10px;
+      }
+
+      .topic-section {
+        padding-right: 10px;
+        padding-left: 10px;
       }
     }
   </style>
@@ -1769,7 +1962,7 @@
       <div class="topic-strip-header">
         <div>
           <h2 class="topic-title-h2">
-            <span >6. ยืนยันตัวตนก่อนใช้อินเทอร์เน็ต (Network Authentication บนเครือข่าย DOAE SmartNet)</span>
+            <span >6. ยืนยันตัวตนเข้าอินเทอร์เน็ต DOAE SmartNet</span>
             <span class="tag-mode">🌐 เว็บ</span>
           </h2>
           
@@ -1803,101 +1996,69 @@
           <div class="step-linked-item color-1" data-step-num="1" data-color="#039855" style="--step-color:#039855;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#039855;">1</span>
-              <span class="step-item-title ">ทำไมต้องยืนยันตัวตนก่อนใช้เน็ต (เครือข่าย DOAE SmartNet)</span>
-              <span class="step-item-action ">[ต้องดู]</span>
+              <span class="step-item-title ">รับบัญชีเข้าเครือข่าย</span>
+              <span class="step-item-action ">Traffic Controller</span>
             </div>
-            <div class="step-item-desc ">กรมฯ ใช้ระบบพิสูจน์และยืนยันตัวตนผ่าน <strong class="hl-green">SSO Horizon</strong> ก่อนเข้าใช้งานเครือข่ายอินเทอร์เน็ตภายในกรมส่งเสริมการเกษตร (<strong class="hl-green">DOAE SmartNet</strong>) — <strong class="hl-green">เริ่มใช้ที่ ศสท. เรียบร้อยแล้ว และกำลังขยายผลสู่หน่วยงานส่วนกลางและส่วนภูมิภาค</strong> ทำครั้งแรกเมื่อเปิดเครื่อง/เชื่อมเครือข่าย จากนั้นใช้งานได้ตามปกติ</div>
+            <div class="step-item-desc ">เข้า <a href="https://traffic.doae.go.th" target="_blank" rel="noopener">traffic.doae.go.th</a> ด้วย SSO หรือสแกน QR ผ่านแอป DOAE ID เลือกหน่วยงาน แล้วตรวจอีเมลราชการ <strong class="hl-green">@doae.go.th</strong> เพื่อรับ Username และ Password สำหรับเครือข่าย</div>
             
           </div>
           <div class="step-linked-item color-2" data-step-num="2" data-color="#026AA2" style="--step-color:#026AA2;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#026AA2;">2</span>
-              <span class="step-item-title ">ครั้งแรก: ขอเปิดสิทธิ์เครือข่าย DOAE SmartNet</span>
-              <span class="step-item-action ">[ต้องดำเนินการ]</span>
+              <span class="step-item-title ">เชื่อมต่อ DOAE SmartNet</span>
+              <span class="step-item-action ">LAN / Wi-Fi</span>
             </div>
-            <div class="step-item-desc ">ล็อกอิน <strong class="hl-blue">sso.doae.go.th</strong> → เมนูขอเปิดสิทธิ์ใช้งานเครือข่าย (<strong class="hl-blue">DOAE SmartNet</strong>) แล้วรอระบบอนุมัติ</div>
+            <div class="step-item-desc ">เสียบสาย LAN หรือต่อ Wi-Fi <strong class="hl-blue">ชื่อสัญญาณทางการของ DOAE SmartNet</strong> เท่านั้น</div>
             
           </div>
           <div class="step-linked-item color-3" data-step-num="3" data-color="#D97706" style="--step-color:#D97706;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#D97706;">3</span>
-              <span class="step-item-title ">เชื่อมต่อเครือข่าย DOAE SmartNet ของกรมฯ</span>
-              <span class="step-item-action ">[ต้องคลิก]</span>
+              <span class="step-item-title ">เปิดหน้า Network Authentication</span>
+              <span class="step-item-action ">เปิดเว็บ</span>
             </div>
-            <div class="step-item-desc ">เสียบสาย LAN หรือต่อ Wi-Fi <strong class="hl-orange">เฉพาะชื่อสัญญาณทางการของเครือข่าย DOAE SmartNet กรมส่งเสริมการเกษตร</strong> เท่านั้น</div>
+            <div class="step-item-desc ">เปิดเบราว์เซอร์แล้วเข้าเว็บไซต์ใดก็ได้ หากระบบแสดงหน้าเข้าสู่ระบบเครือข่าย ให้ดำเนินการต่อที่หน้านั้น</div>
             
           </div>
           <div class="step-linked-item color-4" data-step-num="4" data-color="#7F56D9" style="--step-color:#7F56D9;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#7F56D9;">4</span>
-              <span class="step-item-title ">ยืนยันตัวตนผ่านหน้าเบราว์เซอร์</span>
-              <span class="step-item-action ">[ต้องกรอก]</span>
+              <span class="step-item-title ">กรอกบัญชีเครือข่าย</span>
+              <span class="step-item-action ">ไม่ใช่ SSO</span>
             </div>
-            <div class="step-item-desc ">เปิดเบราว์เซอร์ → ระบบแสดงหน้ายืนยันตัวตน → กรอก <strong class="hl-purple">DOAE ID และรหัสผ่าน</strong> แล้วกดยืนยัน</div>
+            <div class="step-item-desc ">กรอก Username และ Password ที่ได้รับทางอีเมลราชการ แล้วกดยืนยัน <strong class="hl-purple">อย่าใช้รหัสผ่าน SSO ในหน้านี้</strong></div>
             
           </div>
           <div class="step-linked-item color-5" data-step-num="5" data-color="#D92D20" style="--step-color:#D92D20;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#D92D20;">5</span>
-              <span class="step-item-title ">เห็นสถานะ Online = ใช้อินเทอร์เน็ตได้ทันที</span>
-              <span class="step-item-action ">[ต้องดู]</span>
+              <span class="step-item-title ">ตรวจผลและแก้ปัญหาเบื้องต้น</span>
+              <span class="step-item-action ">Online</span>
             </div>
-            <div class="step-item-desc ">หากยังไม่เห็น ให้ตรวจสายก่อนคิดว่าเน็ตพัง — สาย LAN ต้องไม่หัก ไม่งอ ไม่หลุด และไฟสถานะที่ช่องแสดงกะพริบ · Wi-Fi ต่อเฉพาะชื่อสัญญาณทางการของกรมฯ</div>
+            <div class="step-item-desc ">เมื่อยืนยันสำเร็จจะใช้อินเทอร์เน็ตได้ หากไม่สำเร็จ ให้ตรวจสาย LAN หรือ Wi-Fi ทางการ แล้วเปิดเว็บไซต์ใหม่อีกครั้ง หากยังไม่ได้ให้ติดต่อ <a href="#topic-sec-24">Helpdesk (หัวข้อ 24)</a></div>
             
           </div>
           
         </div>
       </div>
       <div class="topic-extra-content">
-        <div class="sub-block" style="margin-top: 24px; padding: 18px; background: #F8FAFC; border: 1px solid #CBD5E1; border-left: 5px solid #026AA2; border-radius: 10px;">
-          <h3 style="margin-top: 0; font-size: 17px; color: #0F172A; display: flex; align-items: center; gap: 8px;">
-             <span><strong style="color: rgb(38, 49, 63); font-size: 15px;">ถ้ายังเข้าไม่ได้</strong><span style="color: rgb(38, 49, 63); font-size: 15px; font-weight: 400;"> — ตรวจสอบว่าเชื่อมต่อเครือข่ายทางการของกรมฯ แล้ว จากนั้นเปิดแท็บใหม่ไปที่เว็บไซต์ใดก็ได้เพื่อเรียกหน้ายืนยันตัวตน หากยังไม่ขึ้นให้ตรวจสาย LAN หรือ Wi-Fi แล้วเริ่มเครื่องใหม่ หากยังมีปัญหาให้ติดต่อ Helpdesk ตาม <a href="#topic-sec-24">หัวข้อ 24</a></span></span>
-          </h3>
-        </div>
-        <div class="sub-block" style="padding: 18px; background: #F8FAFC; border: 1px solid #CBD5E1; border-left: 5px solid #026AA2; border-radius: 10px;">
-          <h3 style="margin: 0 0 10px; font-size: 17px; color: #0F172A;">รับบัญชีเข้าเครือข่ายผ่าน Traffic Controller</h3>
-          <p style="margin-bottom: 12px; color: #334155;">ก่อนเข้าสู่หน้า Network Authentication ให้รับชื่อผู้ใช้และรหัสผ่านเครือข่ายจาก <a href="https://traffic.doae.go.th" target="_blank" rel="noopener">traffic.doae.go.th</a> ข้อมูลชุดนี้ใช้กับหน้าเข้าอินเทอร์เน็ต ไม่ใช่รหัสผ่าน SSO</p>
-          <ol style="padding-left: 22px; color: #334155; line-height: 1.7;">
-            <li>ลงชื่อเข้า Traffic Controller ด้วย SSO หรือสแกน QR ผ่านแอป DOAE ID</li>
-            <li>เลือกหน่วยงานที่ต้องการใช้งานให้ถูกต้อง</li>
-            <li>ตรวจอีเมลราชการ <strong>@doae.go.th</strong> ของหน่วยงานเพื่อรับ Username และ Password สำหรับเครือข่าย</li>
-            <li>เมื่อระบบเครือข่ายแสดงหน้าเข้าสู่ระบบ ให้กรอก Username และ Password ที่ได้รับ แล้วตรวจว่าหน้าเว็บยืนยันว่าเชื่อมต่อสำเร็จ</li>
-          </ol>
-          <div class="key-points-grid" style="margin-top: 14px;">
-            <article class="step-linked-item">
-              <div class="step-item-head"><span class="step-item-title">เข้าสู่ Traffic Controller</span></div>
-              <img src="images/traffic-controller-login.png" alt="หน้าเข้าสู่ระบบ Traffic Controller" class="screenshot-img-element" loading="lazy" decoding="async" style="margin-top: 8px; border: 1px solid #E2E8F0; border-radius: 8px;">
-            </article>
-            <article class="step-linked-item">
-              <div class="step-item-head"><span class="step-item-title">เลือกหน่วยงาน</span></div>
-              <img src="images/traffic-controller-select-agency.png" alt="ตัวอย่างหน้าเลือกหน่วยงานใน Traffic Controller โดยปกปิด IP และอีเมลตัวอย่างแล้ว" class="screenshot-img-element" loading="lazy" decoding="async" style="margin-top: 8px; border: 1px solid #E2E8F0; border-radius: 8px;">
-            </article>
-            <article class="step-linked-item">
-              <div class="step-item-head"><span class="step-item-title">รับบัญชีเครือข่ายทางอีเมล</span></div>
-              <img src="images/network-credentials-email.png" alt="ตัวอย่างอีเมลแจ้งบัญชีเข้าเครือข่าย โดยปกปิดอีเมล ชื่อผู้ใช้ และรหัสผ่านแล้ว" class="screenshot-img-element" loading="lazy" decoding="async" style="margin-top: 8px; border: 1px solid #E2E8F0; border-radius: 8px;">
-            </article>
-            <article class="step-linked-item">
-              <div class="step-item-head"><span class="step-item-title">ยืนยันตัวตนบนเครือข่าย</span></div>
-              <img src="images/smartnet-captive-portal-login.png" alt="ตัวอย่างหน้าเข้าสู่ระบบ DOAE SmartNet โดยปกปิด IP, MAC และชื่อผู้ใช้แล้ว" class="screenshot-img-element" loading="lazy" decoding="async" style="margin-top: 8px; border: 1px solid #E2E8F0; border-radius: 8px;">
-              <img src="images/smartnet-auth-success.png" alt="ตัวอย่างหน้าจอยืนยันการเข้าเครือข่ายสำเร็จ โดยปกปิดข้อมูล IP/MAC ในแถบที่อยู่แล้ว" class="screenshot-img-element" loading="lazy" decoding="async" style="margin-top: 10px; border: 1px solid #E2E8F0; border-radius: 8px;">
-            </article>
-          </div>
-          <div class="note-box note-warn" style="margin-top: 12px;">
-            <strong>ข้อควรระวัง</strong> — ใช้รหัสเครือข่ายที่ได้รับทางอีเมลในหน้า Authentication เท่านั้น อย่าใช้หรือส่งต่อรหัสผ่าน SSO และอย่าเผยแพร่ Username/Password ในภาพหน้าจอ
-          </div>
-        </div>
-        <div class="sub-block" style="padding: 18px; background: #F8FAFC; border: 1px solid #CBD5E1; border-left: 5px solid #7F56D9; border-radius: 10px;">
-          <h3 style="margin: 0 0 10px; font-size: 17px; color: #0F172A;">SSO Agent สำหรับเชื่อมโยงเครื่องกับบัญชี</h3>
-          <p style="margin-bottom: 10px; color: #334155;">ติดตั้งเฉพาะเมื่อหน่วยงานหรือผู้ดูแลระบบแนะนำ โดยดาวน์โหลดจาก <a href="https://s.doae.go.th/2b657344" target="_blank" rel="noopener">ลิงก์ SSO Agent ของกรมฯ</a> แล้วเปิดตัวติดตั้งด้วยสิทธิ์ผู้ดูแลระบบ (คลิกขวา <strong>Run as administrator</strong>) หากไม่มีสิทธิ์ติดตั้ง ให้ติดต่อผู้ดูแลระบบ ห้ามดาวน์โหลดตัวติดตั้งจากแหล่งอื่น</p>
-          <div class="key-points-grid">
-            <article class="step-linked-item">
-              <div class="step-item-head"><span class="step-item-title">ลิงก์ดาวน์โหลด SSO Agent</span></div>
-              <img src="images/sso-agent-download-qr.png" alt="QR Code สำหรับเปิดลิงก์ดาวน์โหลด SSO Agent ของกรมฯ" class="screenshot-img-element" loading="lazy" decoding="async" style="margin-top: 8px; max-width: 280px; border: 1px solid #E2E8F0; border-radius: 8px;">
-            </article>
-            <article class="step-linked-item">
-              <div class="step-item-head"><span class="step-item-title">เปิดตัวติดตั้งด้วยสิทธิ์ผู้ดูแลระบบ</span></div>
-              <img src="images/sso-agent-install-as-admin.png" alt="ตัวอย่างเมนูคลิกขวาเพื่อเรียกใช้ตัวติดตั้ง SSO Agent ในฐานะผู้ดูแลระบบ" class="screenshot-img-element" loading="lazy" decoding="async" style="margin-top: 8px; border: 1px solid #E2E8F0; border-radius: 8px;">
-            </article>
+        <div class="sub-block" style="padding: 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-left: 5px solid #026AA2; border-radius: 10px;">
+          <h3 style="margin: 0; font-size: 16px; color: #0F172A;">ภาพตัวอย่างประกอบการใช้งาน</h3>
+          <div class="network-auth-examples">
+            <div class="network-auth-example">
+              <div class="network-auth-example-title">Traffic Controller: เข้าระบบและเลือกหน่วยงาน</div>
+              <img src="images/traffic-controller-login.png" alt="หน้าเข้าสู่ระบบ Traffic Controller" class="screenshot-img-element" loading="lazy" decoding="async">
+              <img src="images/traffic-controller-select-agency.png" alt="ตัวอย่างหน้าเลือกหน่วยงานใน Traffic Controller โดยปกปิดข้อมูลแล้ว" class="screenshot-img-element" loading="lazy" decoding="async">
+            </div>
+            <div class="network-auth-example">
+              <div class="network-auth-example-title">อีเมลรับบัญชีเครือข่าย</div>
+              <img src="images/network-credentials-email.png" alt="ตัวอย่างอีเมลแจ้งบัญชีเข้าเครือข่าย โดยปกปิดข้อมูลแล้ว" class="screenshot-img-element" loading="lazy" decoding="async">
+            </div>
+            <div class="network-auth-example">
+              <div class="network-auth-example-title">หน้าเข้าสู่ระบบและผลการเชื่อมต่อ</div>
+              <img src="images/smartnet-captive-portal-login.png" alt="ตัวอย่างหน้าเข้าสู่ระบบ DOAE SmartNet โดยปกปิดข้อมูลแล้ว" class="screenshot-img-element" loading="lazy" decoding="async">
+              <img src="images/smartnet-auth-success.png" alt="ตัวอย่างหน้าจอยืนยันการเข้าเครือข่ายสำเร็จ โดยปกปิดข้อมูลแล้ว" class="screenshot-img-element" loading="lazy" decoding="async">
+            </div>
           </div>
         </div>
       </div>
@@ -2740,7 +2901,7 @@
       <div class="topic-extra-content">
         <div class="sub-block" style="padding: 18px; background: #F8FAFC; border: 1px solid #CBD5E1; border-left: 5px solid #026AA2; border-radius: 10px;">
           <h3 style="margin: 0 0 10px; font-size: 17px; color: #0F172A;">คำสั่งจัดการไฟล์ (เมนู Actions) ประวัติกิจกรรม และการกู้คืนจากถังขยะ</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-bottom: 12px;">
+          <div class="topic-extra-grid" style="gap: 14px; margin-bottom: 12px;">
             <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px;">
               <div style="font-weight: 700; color: #026AA2; margin-bottom: 6px;">เมนูคำสั่ง Actions (กดจุดสามจุด <code>...</code> ท้ายรายการ)</div>
               <ul style="padding-left: 18px; color: #334155; font-size: 13px; line-height: 1.6; margin-bottom: 10px;">
@@ -2766,7 +2927,7 @@
 
         <div class="sub-block" style="padding: 18px; background: #F8FAFC; border: 1px solid #CBD5E1; border-left: 5px solid #039855; border-radius: 10px;">
           <h3 style="margin: 0 0 10px; font-size: 17px; color: #0F172A;">ดาวน์โหลดแอปซิงค์ไฟล์ (Windows / Android / iOS) และข้อควรตรวจก่อนแชร์</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; align-items: start;">
+          <div class="topic-extra-grid" style="gap: 14px; align-items: start;">
             <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px;">
               <p style="color: #334155; font-size: 13px; line-height: 1.6; margin-bottom: 10px;">เปิดเมนู <strong>ดาวน์โหลด</strong> บนแถบด้านบนเพื่อติดตั้งโปรแกรมซิงค์ไฟล์บนคอมพิวเตอร์ <strong>Windows (Desktop Sync Client)</strong> สำหรับซิงก์ไฟล์อัตโนมัติและเปิดใช้งานแบบออฟไลน์ (Offline Access) หรือสแกน QR Code ติดตั้งแอปบนมือถือ <strong>Android</strong> และ <strong>iOS / iPadOS</strong></p>
               <img src="images/drive-downloads.png" alt="หน้าดาวน์โหลดแอป DOAE Drive สำหรับ Windows, Android และ iOS/iPadOS" class="screenshot-img-element" loading="lazy" decoding="async" style="border: 1px solid #E2E8F0; border-radius: 8px;">
