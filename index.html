@@ -847,9 +847,10 @@
       gap: 10px;
     }
 
-    .topic-extra-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    @media (max-width: 640px) {
+      .guidance-steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
     /* ==================================================== */
@@ -860,6 +861,11 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
+    }
+
+    .topic-extra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     /* Tables */
@@ -1081,10 +1087,6 @@
       }
 
       .topic-extra-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .guidance-steps {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -1953,6 +1955,31 @@
         </div>
       </div>
 
+      <div class="topic-extra-content">
+        <div class="notice">
+          <strong>สถานะคำขอที่ควรรู้:</strong>
+          <span>รออนุมัติ = อยู่ระหว่างตรวจสอบ · ใช้งาน/พร้อมใช้ = จัดสรรแล้ว · ไม่สำเร็จ/ไม่อนุมัติ = เปิดรายละเอียดดูหมายเหตุ · เพิกถอน/เก็บแล้ว = อยู่ในประวัติ</span>
+        </div>
+        <div class="topic-extra-grid">
+          <div class="notice warning">
+            <strong>ถ้าชื่อ DNS ใช้ไม่ได้</strong>
+            <p>ใช้เฉพาะ a-z, 0-9 และขีดกลาง ห้ามจุด เว้นวรรค หรือขีดล่าง และต้องไม่ซ้ำกับชื่อเดิม</p>
+          </div>
+          <div class="notice warning">
+            <strong>ถ้าปุ่มส่งคำขอยังไม่พร้อม</strong>
+            <p>ตรวจช่องจำเป็น วัตถุประสงค์ ขอบเขต IP สเปก และรอระบบตรวจชื่อให้เสร็จ</p>
+          </div>
+          <div class="notice">
+            <strong>ถ้าไม่เห็นเมนูหรือเปิดหน้าไม่ได้</strong>
+            <p>กลับเข้า SSO ด้วยบัญชีที่มีสิทธิ์ เปิดแอปจากปุ่ม DNS / VM และเลือก <strong>แชทติดต่อทีม</strong> หากต้องการให้ทีม Infra ตรวจสอบ</p>
+          </div>
+          <div class="notice">
+            <strong>ตรวจทานก่อนส่ง</strong>
+            <p>ชื่อและวัตถุประสงค์ตรงกับงานจริง · ทรัพยากรเหมาะสม · ข้อมูลผู้ติดต่อถูกต้อง · ไม่ส่งคำขอซ้ำโดยไม่ตรวจรายการเดิม</p>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- ================================================== -->
@@ -2546,7 +2573,7 @@
               <span class="step-item-title ">ช่องกรอกชื่อผู้ใช้ / อีเมลบนหน้าเว็บเมล (mailbox.doae.go.th)</span>
               <span class="step-item-action ">[ต้องกรอก]</span>
             </div>
-            <div class="step-item-desc ">เข้าสู่หน้าเว็บเมล <a href="https://mailbox.doae.go.th" target="_blank" rel="noopener">mailbox.doae.go.th</a> แล้วกรอกชื่ออีเมลราชการ เช่น <code>user@doae.go.th</code> หรือเมลหน่วยงาน</div>
+            <div class="step-item-desc ">เข้าสู่หน้าเว็บเมล <a href="https://mailbox.doae.go.th" target="_blank" rel="noopener">mailbox.doae.go.th</a> แล้วกรอกชื่ออีเมลราชการ เช่น <code>anuwat.ep2@doae.go.th</code> หรือเมลหน่วยงาน</div>
             
           </div>
           <div class="step-linked-item color-8" data-step-num="8" data-color="#4F46E5" style="--step-color:#4F46E5;">
@@ -4700,18 +4727,18 @@
     <!-- ================================================== -->
     <!-- TOPIC 29: 29. บริการขอชื่อโดเมน DNS (*.doae.go.th) และขอเครื่องแม่ข่ายเสมือน VM (dns-portal.doae.go.th) -->
     <!-- ================================================== -->
-    <section class="topic-section active" id="topic-sec-29" data-topic-index="29">
+<section class="topic-section active" id="topic-sec-29" data-topic-index="29">
       <div class="topic-strip-header">
         <div>
           <h2 class="topic-title-h2">
-            <span >29. บริการขอชื่อโดเมน DNS (*.doae.go.th) และขอเครื่องแม่ข่ายเสมือน VM (dns-portal.doae.go.th)</span>
+            <span >29. คำขอ DNS และ Container (infra.doae.go.th)</span>
             <span class="tag-mode">🌐 เว็บ</span>
           </h2>
           
         </div>
         <div>
-          <a href="https://dns-portal.doae.go.th" target="_blank" class="topic-top-shortcut" title="🖥️ ขอโดเมน DNS/VM dns-portal.doae.go.th ↗">
-            <span>🖥️ ขอโดเมน DNS/VM dns-portal.doae.go.th ↗</span>
+          <a href="https://infra.doae.go.th/" target="_blank" class="topic-top-shortcut" title="🖥️ เปิดระบบคำขอ Infra ↗">
+            <span>🖥️ เปิดระบบคำขอ Infra ↗</span>
           </a>
         </div>
       </div>
@@ -4724,18 +4751,16 @@
                 <span class="b-dot b-dot-y"></span>
                 <span class="b-dot b-dot-g"></span>
               </div>
-              <div class="browser-url-text">annotated_dns_vm.png</div>
+              <div class="browser-url-text">DNS — รายการคำขอ</div>
               
               <div class="pin-hint-text">คลิกจุดบนภาพเพื่อดูคำอธิบาย</div>
             </div>
             <div class="screenshot-canvas" id="canvas-29-1">
-              <img src="images/annotated_dns_vm.png" alt="" class="screenshot-img-element" id="img-29-1">
-              <span class="img-pin" style="left:1.8%; top:8.2%; background:#039855;" data-pin="1" title="จุดที่ 1 — คลิกเพื่อดูคำอธิบาย">1</span>
-              <span class="img-pin" style="left:9.8%; top:8.2%; background:#026AA2;" data-pin="2" title="จุดที่ 2 — คลิกเพื่อดูคำอธิบาย">2</span>
-              <span class="img-pin" style="left:89.5%; top:16.2%; background:#D97706;" data-pin="3" title="จุดที่ 3 — คลิกเพื่อดูคำอธิบาย">3</span>
-              <span class="img-pin" style="left:2.2%; top:22.0%; background:#7F56D9;" data-pin="4" title="จุดที่ 4 — คลิกเพื่อดูคำอธิบาย">4</span>
-              <span class="img-pin" style="left:46.2%; top:22.0%; background:#D92D20;" data-pin="5" title="จุดที่ 5 — คลิกเพื่อดูคำอธิบาย">5</span>
-              <span class="img-pin" style="left:2.2%; top:30.2%; background:#0D9488;" data-pin="6" title="จุดที่ 6 — คลิกเพื่อดูคำอธิบาย">6</span>
+              <img src="images/infra-dns-request-list.png" alt="หน้ารายการคำขอ DNS" class="screenshot-img-element" id="img-29-1">
+              <span class="img-pin" style="left:12%; top:11%; background:#039855;" data-pin="1" title="จุดที่ 1 — เปิดเมนูชื่อโดเมน">1</span>
+              <span class="img-pin" style="left:85%; top:11%; background:#D97706;" data-pin="2" title="จุดที่ 2 — ยื่นคำขอใหม่">2</span>
+              <span class="img-pin" style="left:16%; top:28%; background:#7F56D9;" data-pin="3" title="จุดที่ 3 — กรองสถานะคำขอ">3</span>
+              <span class="img-pin" style="left:76%; top:28%; background:#026AA2;" data-pin="4" title="จุดที่ 4 — ค้นหาชื่อโดเมนหรือ IP">4</span>
             </div>
             
           </div>
@@ -4746,16 +4771,45 @@
                 <span class="b-dot b-dot-y"></span>
                 <span class="b-dot b-dot-g"></span>
               </div>
-              <div class="browser-url-text">แท็บ 'ขอเครื่อง' (คำขอเครื่องแม่ข่า…</div>
+              <div class="browser-url-text">DNS — แบบฟอร์มคำขอ</div>
               
               <div class="pin-hint-text">คลิกจุดบนภาพเพื่อดูคำอธิบาย</div>
             </div>
             <div class="screenshot-canvas" id="canvas-29-2">
-              <img src="images/dns_vm_server.png" alt="" class="screenshot-img-element" id="img-29-2">
-              <span class="img-pin" style="left:11.8%; top:15.2%; background:#C01048;" data-pin="7" title="จุดที่ 7 — คลิกเพื่อดูคำอธิบาย">7</span>
-              <span class="img-pin" style="left:88.2%; top:31.2%; background:#4F46E5;" data-pin="8" title="จุดที่ 8 — คลิกเพื่อดูคำอธิบาย">8</span>
-              <span class="img-pin" style="left:5.2%; top:45.8%; background:#8B5E34;" data-pin="9" title="จุดที่ 9 — คลิกเพื่อดูคำอธิบาย">9</span>
-              <span class="img-pin" style="left:5.2%; top:62.5%; background:#039855;" data-pin="10" title="จุดที่ 10 — คลิกเพื่อดูคำอธิบาย">10</span>
+              <img src="images/infra-dns-request-form-full.png" alt="แบบฟอร์มคำขอ DNS" class="screenshot-img-element" id="img-29-2">
+              <span class="img-pin" style="left:22%; top:15%; background:#039855;" data-pin="5" title="จุดที่ 5 — กรอกชื่อซับโดเมน">5</span>
+              <span class="img-pin" style="left:22%; top:42%; background:#026AA2;" data-pin="6" title="จุดที่ 6 — ระบุวัตถุประสงค์">6</span>
+              <span class="img-pin" style="left:22%; top:61%; background:#7F56D9;" data-pin="7" title="จุดที่ 7 — เลือกขอบเขต IP">7</span>
+              <span class="img-pin" style="left:84%; top:91%; background:#D92D20;" data-pin="8" title="จุดที่ 8 — ตรวจข้อมูลและส่งคำขอ">8</span>
+            </div>
+          </div>
+          <div class="screenshot-viewport" id="viewport-29-3">
+            <div class="screenshot-top-meta">
+              <div class="browser-dots"><span class="b-dot b-dot-r"></span><span class="b-dot b-dot-y"></span><span class="b-dot b-dot-g"></span></div>
+              <div class="browser-url-text">Container — รายการคำขอ</div>
+              
+              <div class="pin-hint-text">คลิกจุดบนภาพเพื่อดูคำอธิบาย</div>
+            </div>
+            <div class="screenshot-canvas" id="canvas-29-3">
+              <img src="images/infra-container-request-list.png" alt="หน้ารายการคำขอ Container" class="screenshot-img-element" id="img-29-3">
+              <span class="img-pin" style="left:12%; top:11%; background:#039855;" data-pin="9" title="จุดที่ 9 — เปิดเมนู Container">9</span>
+              <span class="img-pin" style="left:85%; top:11%; background:#D97706;" data-pin="10" title="จุดที่ 10 — ขอ Container ใหม่">10</span>
+              <span class="img-pin" style="left:16%; top:28%; background:#7F56D9;" data-pin="11" title="จุดที่ 11 — กรองสถานะคำขอ">11</span>
+            </div>
+          </div>
+          <div class="screenshot-viewport" id="viewport-29-4">
+            <div class="screenshot-top-meta">
+              <div class="browser-dots"><span class="b-dot b-dot-r"></span><span class="b-dot b-dot-y"></span><span class="b-dot b-dot-g"></span></div>
+              <div class="browser-url-text">Container — แบบฟอร์มคำขอ</div>
+              
+              <div class="pin-hint-text">คลิกจุดบนภาพเพื่อดูคำอธิบาย</div>
+            </div>
+            <div class="screenshot-canvas" id="canvas-29-4">
+              <img src="images/infra-container-request-form-full.png" alt="แบบฟอร์มคำขอ Container" class="screenshot-img-element" id="img-29-4">
+              <span class="img-pin" style="left:22%; top:14%; background:#039855;" data-pin="12" title="จุดที่ 12 — กรอกหัวข้อและวัตถุประสงค์">12</span>
+              <span class="img-pin" style="left:22%; top:42%; background:#026AA2;" data-pin="13" title="จุดที่ 13 — เลือก OS และทรัพยากร">13</span>
+              <span class="img-pin" style="left:22%; top:69%; background:#7F56D9;" data-pin="14" title="จุดที่ 14 — เลือกรูปแบบการเข้าถึง">14</span>
+              <span class="img-pin" style="left:84%; top:91%; background:#D92D20;" data-pin="15" title="จุดที่ 15 — ตรวจข้อมูลและส่งคำขอ">15</span>
             </div>
           </div>
         </div>
@@ -4763,91 +4817,116 @@
           <div class="step-linked-item color-1" data-step-num="1" data-color="#039855" style="--step-color:#039855;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#039855;">1</span>
-              <span class="step-item-title ">แท็บเมนู 'ขอ DNS' (สำหรับขอชื่อโดเมนภายใต้ .doae.go.th)</span>
-              <span class="step-item-action ">[ต้องคลิกเมื่อต้องการขอ Subdomain]</span>
+              <span class="step-item-title ">เข้าใช้งานระบบ Infra ผ่าน SSO</span>
+              <span class="step-item-action ">[เปิด infra.doae.go.th]</span>
             </div>
-            <div class="step-item-desc ">ใช้สำหรับขอตั้งชื่อเว็บไซต์หรือระบบงานของหน่วยงานภายใต้โดเมน <strong class="hl-green">*.doae.go.th</strong> โดยเมื่อกดปุ่มยื่นคำขอใหม่ ต้อง <span class="act-fill">[ต้องกรอก]</span> ข้อมูล 4 ส่วน คือ: <strong class="hl-green">① ชื่อโดเมนที่ต้องการ → ② อธิบายวัตถุประสงค์การใช้งาน → ③ ใส่เลข IP ของเว็บไซต์/แอปพลิเคชัน → ④ กดปุ่ม "ส่งคำขอ"</strong></div>
+            <div class="step-item-desc ">เปิด <a href="https://sso.doae.go.th/" target="_blank">sso.doae.go.th</a> เข้าสู่ระบบด้วย DOAE ID และ MFA จากนั้นเลือกแอป <strong class="hl-green">DNS / VM</strong> หรือเปิด <strong class="hl-green">แอปและบริการ</strong> แล้วเลือกบริการ DNS / VM</div>
             
           </div>
           <div class="step-linked-item color-2" data-step-num="2" data-color="#026AA2" style="--step-color:#026AA2;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#026AA2;">2</span>
-              <span class="step-item-title ">แท็บเมนู 'ขอเครื่อง' (สำหรับขอเครื่องแม่ข่ายเสมือน Virtual Machine - VM)</span>
-              <span class="step-item-action ">[ต้องคลิกเมื่อต้องการขอ Server/VM]</span>
+              <span class="step-item-title ">เลือกเมนูชื่อโดเมนหรือ Container</span>
+              <span class="step-item-action ">[เลือกบริการที่ต้องการ]</span>
             </div>
-            <div class="step-item-desc ">ใช้สำหรับขอรับบริการเครื่องแม่ข่ายเสมือนบนระบบคลาวด์ของกรม โดยต้อง <span class="act-fill">[ต้องกรอก]</span> รายละเอียด 8 ส่วนสำคัญตามคู่มือกรม ได้แก่:<br>• <strong class="hl-blue">① หัวข้อคำขอ</strong> และ <strong class="hl-blue">② วัตถุประสงค์ / เหตุผลความจำเป็น</strong><br>• <strong class="hl-blue">③ ชื่อโครงการ</strong> และ <strong class="hl-blue">④ ชื่อผู้รับจ้าง / คู่สัญญา</strong> (ถ้ามี)<br>• <strong class="hl-blue">⑤ ชื่อเว็บไซต์ / ระบบงาน / ฐานข้อมูล</strong> ที่จะติดตั้ง<br>• <strong class="hl-orange">⑥ ทรัพยากรเครื่องที่ต้องการ</strong>: ระบุ <strong class="hl-orange">จำนวน CPU, หน่วยความจำ (RAM) และพื้นที่ดิสก์ (Disk)</strong><br>• <strong class="hl-purple">⑦ เลือกสภาพแวดล้อมการใช้งาน (Environment)</strong> และ <strong class="hl-purple">ระบบปฏิบัติการ (OS)</strong><br>• <strong class="hl-teal">⑧ ข้อมูลผู้ติดต่อประสานงาน</strong>: ชื่อ-นามสกุล, หน่วยงาน, เบอร์โทรศัพท์ และอีเมล จากนั้นกดปุ่ม <strong class="hl-green">"ส่งคำขอ"</strong></div>
+            <div class="step-item-desc ">ผู้ใช้ทั่วไปจะเห็นเมนู <strong class="hl-blue">ชื่อโดเมน</strong>, <strong class="hl-blue">Container</strong> และ <strong class="hl-blue">แชทติดต่อทีม</strong> ส่วนคิวอนุมัติและทะเบียนเป็นเมนูผู้ดูแลระบบ</div>
             
           </div>
           <div class="step-linked-item color-3" data-step-num="3" data-color="#D97706" style="--step-color:#D97706;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#D97706;">3</span>
-              <span class="step-item-title ">ปุ่ม 'ยื่นคำขอใหม่'</span>
-              <span class="step-item-action ">[ต้องคลิก]</span>
+              <span class="step-item-title ">ยื่นคำขอ DNS ใหม่</span>
+              <span class="step-item-action ">[เริ่มแบบฟอร์ม]</span>
             </div>
-            <div class="step-item-desc ">กดปุ่มสีเขียว <strong class="hl-orange">ยื่นคำขอใหม่</strong> มุมขวาบนเพื่อเปิดแบบฟอร์มขอชื่อโดเมน DNS หรือแบบฟอร์มขอเครื่องแม่ข่ายเสมือน (ตามแท็บที่เลือกไว้ในข้อ 1 หรือข้อ 2)</div>
+            <div class="step-item-desc ">เลือกเมนู <strong class="hl-orange">ชื่อโดเมน</strong> แล้วกด <strong class="hl-orange">ยื่นคำขอใหม่</strong> กรอกซับโดเมน เช่น <code>intranet</code> ระบบจะต่อท้าย <code>.doae.go.th</code> และตรวจชื่ออัตโนมัติ</div>
             
           </div>
           <div class="step-linked-item color-4" data-step-num="4" data-color="#7F56D9" style="--step-color:#7F56D9;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#7F56D9;">4</span>
-              <span class="step-item-title ">แถบตัวกรองสถานะคำขอ</span>
-              <span class="step-item-action ">[ต้องคลิกเพื่อกรองดูสถานะ]</span>
+              <span class="step-item-title ">ค้นหาและกรองรายการ DNS</span>
+              <span class="step-item-action ">[ค้นหารายการ]</span>
             </div>
-            <div class="step-item-desc ">เลือกดูรายการคำขอแยกตามสถานะ ได้แก่ <strong class="hl-orange">รออนุมัติ</strong>, <strong class="hl-green">ใช้งาน</strong>, <strong class="hl-red">ไม่สำเร็จ / ไม่อนุมัติ / เพิกถอน</strong> หรือดู <strong class="hl-purple">ทั้งหมด</strong></div>
+            <div class="step-item-desc ">ใช้ตัวกรองสถานะหรือช่องค้นหาเพื่อค้นหาคำขอด้วยชื่อโดเมนหรือ IP</div>
             
           </div>
           <div class="step-linked-item color-5" data-step-num="5" data-color="#D92D20" style="--step-color:#D92D20;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#D92D20;">5</span>
-              <span class="step-item-title ">ช่องค้นหาชื่อโดเมน หรือหมายเลข IP</span>
-              <span class="step-item-action ">[ต้องกรอกเมื่อต้องการค้นหา]</span>
+              <span class="step-item-title ">กรอกชื่อซับโดเมน</span>
+              <span class="step-item-action ">[รอระบบตรวจชื่อ]</span>
             </div>
-            <div class="step-item-desc ">พิมพ์ชื่อ Subdomain หรือเลข IP Address ที่ได้รับอนุมัติเพื่อค้นหารายการอย่างรวดเร็ว</div>
+            <div class="step-item-desc ">พิมพ์เฉพาะชื่อด้านหน้า เช่น <code>intranet</code> ใช้ a-z, 0-9 และขีดกลางเท่านั้น ห้ามมีจุด เว้นวรรค หรือขีดล่าง</div>
             
           </div>
           <div class="step-linked-item color-6" data-step-num="6" data-color="#0D9488" style="--step-color:#0D9488;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#0D9488;">6</span>
-              <span class="step-item-title ">การ์ดแสดงรายละเอียดโดเมนที่ได้รับอนุมัติแล้ว</span>
-              <span class="step-item-action ">[ต้องดูและคลิกคัดลอก]</span>
+              <span class="step-item-title ">ระบุวัตถุประสงค์และขอบเขต IP</span>
+              <span class="step-item-action ">[กรอกให้ครบ]</span>
             </div>
-            <div class="step-item-desc ">แสดงชื่อเต็มของโดเมน (FQDN เช่น `exampletest.doae.go.th`), ป้ายสถานะ <strong class="hl-teal">ใช้งานแล้ว</strong>, ขอบเขต (<strong class="hl-teal">ภายใน / ภายนอก</strong>) และค่า <strong class="hl-blue">IP Address</strong> โดยสามารถคลิกที่แถวรายการเพื่อคัดลอกชื่อโดเมนหรือเลข IP ไปตั้งค่าระบบได้ทันที</div>
+            <div class="step-item-desc ">อธิบายการใช้งานและเลือกขอบเขต IP เป็น <strong class="hl-teal">ภายใน</strong> หรือ <strong class="hl-teal">ภายนอก</strong> ตรวจข้อมูลแล้วกด <strong class="hl-blue">ส่งคำขอ</strong></div>
             
           </div>
           <div class="step-linked-item color-7" data-step-num="7" data-color="#C01048" style="--step-color:#C01048;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#C01048;">7</span>
-              <span class="step-item-title ">หน้าจอแท็บ 'ขอเครื่อง' (Virtual Machine - VM)</span>
-              <span class="step-item-action ">[สลับแท็บ]</span>
+              <span class="step-item-title ">ตรวจข้อมูลและส่งคำขอ DNS</span>
+              <span class="step-item-action ">[ส่งคำขอ]</span>
             </div>
-            <div class="step-item-desc ">สลับมาที่แท็บขอเครื่องบน <a href="https://dns-portal.doae.go.th" target="_blank">dns-portal.doae.go.th</a> เพื่อบริหาร VM ของหน่วยงาน</div>
+            <div class="step-item-desc ">ตรวจชื่อโดเมน วัตถุประสงค์ และขอบเขต IP ให้ถูกต้อง แล้วกด <strong class="hl-orange">ส่งคำขอ</strong></div>
             
           </div>
           <div class="step-linked-item color-8" data-step-num="8" data-color="#4F46E5" style="--step-color:#4F46E5;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#4F46E5;">8</span>
-              <span class="step-item-title ">ปุ่มยื่นคำขอเครื่องแม่ข่ายเสมือนใหม่</span>
-              <span class="step-item-action ">[ต้องคลิก]</span>
+              <span class="step-item-title ">ดูผลคำขอ DNS</span>
+              <span class="step-item-action ">[ดู FQDN และ IP]</span>
             </div>
-            <div class="step-item-desc ">กดปุ่มสีเขียวเพื่อกรอกแบบฟอร์มขอใช้ VM พร้อมระบุวัตถุประสงค์และสเปกที่ต้องการ</div>
+            <div class="step-item-desc ">คำขอที่อนุมัติจะแสดง FQDN ขอบเขต IP และค่า DNS ที่จัดสรร ใช้ปุ่ม <strong class="hl-blue">คัดลอก</strong> เพื่อนำค่าไปใช้งาน</div>
             
           </div>
           <div class="step-linked-item color-1" data-step-num="9" data-color="#8B5E34" style="--step-color:#8B5E34;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#8B5E34;">9</span>
-              <span class="step-item-title ">แถบตัวกรองสถานะคำขอเครื่องแม่ข่าย</span>
-              <span class="step-item-action ">[กรองดูสถานะ]</span>
+              <span class="step-item-title ">เข้าเมนู Container</span>
+              <span class="step-item-action ">[เลือกบริการ]</span>
             </div>
-            <div class="step-item-desc ">กรองดูสถานะคำขอ VM (รออนุมัติ / กำลังเปิดใช้งาน / ระงับชั่วคราว)</div>
+            <div class="step-item-desc ">เลือกเมนู <strong class="hl-blue">Container</strong> เพื่อดูรายการคำขอและเริ่มขอทรัพยากรบนโฮสต์กลาง</div>
             
           </div>
           <div class="step-linked-item color-2" data-step-num="10" data-color="#039855" style="--step-color:#039855;">
             <div class="step-item-head">
               <span class="step-item-badge" style="background:#039855;">10</span>
-              <span class="step-item-title ">ตารางแสดงรายการ VM และสเปกเครื่อง (CPU / RAM / Disk / OS)</span>
-              <span class="step-item-action ">[ตรวจสอบสเปก]</span>
+              <span class="step-item-title ">ขอ Container ใหม่</span>
+              <span class="step-item-action ">[เริ่มแบบฟอร์ม]</span>
             </div>
-            <div class="step-item-desc ">แสดงหมายเลข IP, ระบบปฏิบัติการ, CPU, หน่วยความจำ และวันหมดอายุการใช้งานของ VM</div>
+            <div class="step-item-desc ">กด <strong class="hl-orange">ขอ Container ใหม่</strong> ระบบจะแสดงแบบฟอร์มขอ Container + โดเมน</div>
+            
+          </div>
+          <div class="step-linked-item color-3" data-step-num="11" data-color="#D97706" style="--step-color:#D97706;">
+            <div class="step-item-head"><span class="step-item-badge" style="background:#D97706;">11</span><span class="step-item-title ">กรองสถานะ Container</span><span class="step-item-action ">[ติดตามคำขอ]</span></div>
+            <div class="step-item-desc ">ใช้แท็บสถานะและช่องค้นหาเพื่อติดตามคำขอ Container ตามเลขคำขอ hostname หรือ IP</div>
+            
+          </div>
+          <div class="step-linked-item color-4" data-step-num="12" data-color="#7F56D9" style="--step-color:#7F56D9;">
+            <div class="step-item-head"><span class="step-item-badge" style="background:#7F56D9;">12</span><span class="step-item-title ">กรอกหัวข้อและวัตถุประสงค์</span><span class="step-item-action ">[ข้อมูลจำเป็น]</span></div>
+            <div class="step-item-desc ">ระบุหัวข้อคำขอ วัตถุประสงค์ โครงการ/ผู้รับจ้าง (ถ้ามี) และชื่อระบบหรือฐานข้อมูลที่จะติดตั้ง</div>
+            
+          </div>
+          <div class="step-linked-item color-5" data-step-num="13" data-color="#D92D20" style="--step-color:#D92D20;">
+            <div class="step-item-head"><span class="step-item-badge" style="background:#D92D20;">13</span><span class="step-item-title ">เลือก OS และทรัพยากร</span><span class="step-item-action ">[กำหนดสเปก]</span></div>
+            <div class="step-item-desc ">เลือก Ubuntu หรือ Rocky Linux เลือก preset หรือกำหนดเอง แล้วระบุ CPU, RAM, Disk และ Environment</div>
+            
+          </div>
+          <div class="step-linked-item color-6" data-step-num="14" data-color="#0D9488" style="--step-color:#0D9488;">
+            <div class="step-item-head"><span class="step-item-badge" style="background:#0D9488;">14</span><span class="step-item-title ">เลือกรูปแบบการเข้าถึง</span><span class="step-item-action ">[เว็บหรือ SSH]</span></div>
+            <div class="step-item-desc ">เลือก <strong class="hl-teal">โดเมน + เว็บ</strong> หรือ <strong class="hl-teal">SSH อย่างเดียว</strong> หากเลือกเว็บให้กรอกซับโดเมนและรอระบบตรวจชื่อ</div>
+            
+          </div>
+          <div class="step-linked-item color-1" data-step-num="15" data-color="#039855" style="--step-color:#039855;">
+            <div class="step-item-head"><span class="step-item-badge" style="background:#039855;">15</span><span class="step-item-title ">ตรวจผู้ติดต่อและส่งคำขอ</span><span class="step-item-action ">[ตรวจทานก่อนส่ง]</span></div>
+            <div class="step-item-desc ">ตรวจชื่อ อีเมล หน่วยงาน โทรศัพท์ OS สเปก และรูปแบบการเข้าถึง แล้วกด <strong class="hl-green">ส่งคำขอ</strong></div>
             
           </div>
           
@@ -5165,7 +5244,7 @@
               <span class="step-item-title ">ช่องกรอกอีเมล @doae.go.th (ขั้น 1/2)</span>
               <span class="step-item-action ">[ต้องกรอก]</span>
             </div>
-            <div class="step-item-desc ">กรอกชื่อบัญชีอีเมลกรมของท่าน เช่น <code>user@doae.go.th</code> (ใช้บัญชีเดียวกับที่ล็อกอินบนเว็บเบราว์เซอร์)</div>
+            <div class="step-item-desc ">กรอกชื่อบัญชีอีเมลกรมของท่าน เช่น <code>anuwat.ep2@doae.go.th</code> (ใช้บัญชีเดียวกับที่ล็อกอินบนเว็บเบราว์เซอร์)</div>
             
           </div>
           <div class="step-linked-item color-2" data-step-num="2" data-color="#026AA2" style="--step-color:#026AA2;">
@@ -5611,7 +5690,7 @@
               <span class="step-item-title ">รายการเข้าใช้งานล่าสุดรายวัน (ระบุเบราว์เซอร์ ระบบปฏิบัติการ และ IP)</span>
               <span class="step-item-action ">[ตรวจสอบเวลาและ IP]</span>
             </div>
-            <div class="step-item-desc ">แสดงรายละเอียดทุกครั้งที่เข้าใช้งาน เช่น <code>Firefox · Windows ([IP masked])</code> หรือ <code>เบราว์เซอร์ · เว็บ ([IP masked])</code> พร้อมเวลาชัดเจน</div>
+            <div class="step-item-desc ">แสดงรายละเอียดทุกครั้งที่เข้าใช้งาน เช่น <code>Firefox · Windows (10.1.1.1)</code> หรือ <code>เบราว์เซอร์ · เว็บ (10.1.43.148)</code> พร้อมเวลาชัดเจน</div>
             
           </div>
           <div class="step-linked-item color-5" data-step-num="5" data-color="#D92D20" style="--step-color:#D92D20;">
@@ -5733,6 +5812,7 @@
       ['มอบหมายเจ้าหน้าที่', 'มอบหมาย จนท.ดิจิทัล'],
       ['networkmap.doae.go.th', 'ปักพิกัด Network Map'],
       ['proposal.doae.go.th', 'ข้อเสนอดิจิทัล / ICT01'],
+      ['คำขอ DNS และ Container', 'คำขอ DNS & Container'],
       ['dns-portal.doae.go.th', 'ขอโดเมน DNS & VM'],
       ['ภาพรวมความสามารถและการดาวน์โหลด', '📱 ดาวน์โหลดแอป ID0'],
       ['การเชื่อมต่อเซิร์ฟเวอร์ sso.doae.go.th', '📱 เชื่อมเซิร์ฟเวอร์แอป'],
@@ -5804,7 +5884,7 @@
         a.href = '#' + (sec.id || ('topic-sec-' + (i + 1)));
         const shortName = getShortTitle(sec, i);
         const fullTitle = getFullTitle(sec) || shortName;
-        a.textContent = fullTitle;
+        a.textContent = shortName;
         a.title = fullTitle;
 
         row.addEventListener('click', (e) => {
